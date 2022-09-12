@@ -69,6 +69,16 @@ a {
 button {
   border: none;
   background: transparent;
+  color: #483649;
+  font-size: 18px;
+}
+.button {
+  border: none;
+  background: transparent;
+  color: #374936;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
 }
 .material-symbols-outlined {
   color: #d7d3d7;
@@ -84,6 +94,10 @@ button {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
+.day {
+  color: #614f62;
+  font-size: 28px;
+}
 .today-date {
   color: #d7d3d7;
   font-size: 48px;
@@ -91,4 +105,8 @@ button {
 .time {
   color: #d7d3d7;
   font-size: 48px;
+}
+.github {
+  font-size: 12px;
+  color: #614f62;
 }
