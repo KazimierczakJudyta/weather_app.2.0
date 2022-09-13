@@ -48,13 +48,13 @@ sunny_snowing
           <div class="col-sm-9">
             <div class="row text-left gy-5">
               <div class="col-8 col-sm-6">Rain:</div>
-              <div class="col-4 col-sm">3 mm</div>
+              <div class="col-4 col-sm" id="rain">3 mm</div>
               <div class="col-8 col-sm-6">Cloudy:</div>
-              <div class="col-4 col-sm">87%</div>
+              <div class="col-4 col-sm" id="cloudy">87%</div>
               <div class="col-8 col-sm-6">Wind:</div>
-              <div class="col-4 col-sm">23 m/h</div>
+              <div class="col-4 col-sm" id="wind">23 m/h</div>
               <div class="col-8 col-sm-6">Humidity:</div>
-              <div class="col-4 col-sm">23%</div>
+              <div class="col-4 col-sm" id="humidity">23%</div>
             </div>
           </div>
         </div>
@@ -66,7 +66,8 @@ sunny_snowing
   <p class="day"> Monday</p>
           <h3 class="today-date">07 September 2022</h3>
           <h4 class="time">21:13</h4>
-          <span>GitHub:</span> <a href="https://github.com/KazimierczakJudyta/weather_app.2.0">Judyta</a>
+          <span class="github">GitHub: <a href="https://github.com/KazimierczakJudyta/weather_app.2.0">Judyta</a></span>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
 
     <script src="src/app.js"></script>
