@@ -29,20 +29,18 @@
         <div class="col">
           <button id="current">Get your location</button>
           <h1 id="city-name">Poznań</h1>
-          <span class="material-symbols-rounded">
-sunny_snowing
-</span>
+          <img id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
           <p id="weather-info">Cloudy</p>
         </div>
         <div class="col">
           <br />
-          <h2 id="temperature">20°</h2>
-          <span class="temperature-type"><a href="#" id="celsius">C°</a> / <a href="#" id="fahrenheit">F</a></span>
+          <h2> <span id="temperature"></span><span class="temperature-unit"><a href="#" id="celsius">C°</a> / <a href="#" id="fahrenheit">°F</a></span></h2>
+          
         </div>
         <div id="main-col" class="col-4">
           <br />
           <form id="search-form">
-          <input class="searchbar" type="text" placeholder="Search city..." />
+          <input id="searchbar" type="search" placeholder="Search city..." />
           <input class="button" type="submit" value="Look up" />
           </form>
           <hr class="solid" />
@@ -51,15 +49,15 @@ sunny_snowing
           <div class="col-sm-9">
             <div class="row text-left gy-5">
               <div class="col-8 col-sm-6">Feels like:</div>
-              <div class="col-4 col-sm" id="feels">20</div>
+              <div class="col-4 col-sm"> <span id="feels">20</span><sup>°</sup></div>
               <div class="col-8 col-sm-6">Cloudy:</div>
-              <div class="col-4 col-sm" id="cloudy">87%</div>
+              <div class="col-4 col-sm"> <span id="cloudy">87</span>%</div>
               <div class="col-8 col-sm-6">Wind:</div>
-              <div class="col-4 col-sm" id="wind">23 m/h</div>
+              <div class="col-4 col-sm"> <span id="wind">23 </span>m/h</div>
               <div class="col-8 col-sm-6">Humidity:</div>
-              <div class="col-4 col-sm" id="humidity">23%</div>
+              <div class="col-4 col-sm"> <span id="humidity">23</span>%</div>
               <div class="col-8 col-sm-6">Pressure:</div>
-              <div class="col-4 col-sm" id="pressure">3 mm</div>
+              <div class="col-4 col-sm"> <span id="pressure">3 </span>mb</div>
             </div>
           </div>
         </div>
@@ -68,9 +66,11 @@ sunny_snowing
     </div>
 
 <div class="fixed-bottom">
+  <div id="date">
   <p class="day"> Monday</p>
           <h3 class="today-date">07 September 2022</h3>
           <h4 class="time">21:13</h4>
+          </div>
           <span class="github">GitHub: <a href="https://github.com/KazimierczakJudyta/weather_app.2.0">Judyta</a></span>
           <div class="weather-forecast" id="forecast"></div>
         </div>

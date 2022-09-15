@@ -24,6 +24,12 @@ body {
   font-weight: 400;
   text-transform: capitalize;
 }
+h2 {
+  font-size: 54px;
+  color: #d7d3d7;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
 #temperature {
   font-size: 54px;
   color: #d7d3d7;
@@ -32,9 +38,10 @@ body {
   padding: 0;
   margin: 0;
 }
-.temperature-type {
-  display: block;
-  margin: 0 auto;
+.temperature-unit {
+  text-decoration: none;
+  margin-left: 10px;
+  vertical-align: top;
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -43,16 +50,23 @@ body {
   border-radius: 5px;
   border: none;
   padding: 5px 10px;
-  font-size: 16px;
-  color: #d7d3d7;
-  max-width: 62px;
+  font-size: 22px;
+  text-decoration-color: #d7d3d7;
+  max-width: 66px;
 }
-a {
+#fahrenheit {
   text-decoration: none;
-  color: #d7d3d7; /* it is not working, try later */
+  text-decoration-color: #d7d3d7; /* it is not working, try later */
 }
-.temperature-type:hover {
-  background: #2e1c2f;
+#celsius {
+  text-decoration: none;
+  text-decoration-color: #d7d3d7; /* it is not working, try later */
+}
+a:link {
+  color: #314130;
+}
+.temperature-unit:hover {
+  background: #574958;
   color: #d7d3d7;
 }
 #main-col {
@@ -65,7 +79,7 @@ a {
   height: auto;
   padding: 20px 10px 80px 10px;
 }
-.searchbar {
+#searchbar {
   border: none;
   background: transparent;
 }
@@ -78,14 +92,13 @@ button {
 .button {
   border: none;
   background: transparent;
-  color: #374936;
+  color: #212b20;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
 }
-.material-symbols-outlined {
-  color: #d7d3d7;
-  font-size: 38px !important;
+#icon {
+  width: 80px !important;
 }
 .details {
   color: #342035;
@@ -102,11 +115,7 @@ button {
   color: #614f62;
   font-size: 28px;
 }
-.today-date {
-  color: #d7d3d7;
-  font-size: 48px;
-}
-.time {
+#date {
   color: #d7d3d7;
   font-size: 48px;
 }
