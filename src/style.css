@@ -6,7 +6,7 @@ body {
   );
   background-attachment: fixed;
 }
-.city-name {
+#city-name {
   font-size: 52px;
   color: #d7d3d7;
   font-family: "Poppins", sans-serif;
@@ -17,17 +17,20 @@ body {
   font-size: 48px !important;
   text-align: center !important;
 }
-.weather-info {
+#weather-info {
   font-size: 24px;
   color: #d7d3d7;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  text-transform: capitalize;
 }
-.temperature {
-  font-size: 52px;
+#temperature {
+  font-size: 54px;
   color: #d7d3d7;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  padding: 0;
+  margin: 0;
 }
 .temperature-type {
   display: block;
@@ -42,7 +45,7 @@ body {
   padding: 5px 10px;
   font-size: 16px;
   color: #d7d3d7;
-  max-width: 70px;
+  max-width: 62px;
 }
 a {
   text-decoration: none;
@@ -89,6 +92,7 @@ button {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
+
 .col-sm-9 {
   color: #342035;
   font-family: "Poppins", sans-serif;

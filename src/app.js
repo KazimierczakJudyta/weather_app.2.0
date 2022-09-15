@@ -83,5 +83,5 @@ celsius.addEventListener("click", changeToCelsius);
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToFahrenheit);
 
-/*let current = document.querySelector(".searchbar");
-current.addEventListener("click", currentWeather);*/
+let current = document.querySelector("#search-form");
+current.addEventListener("click", currentWeather);
