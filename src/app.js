@@ -76,7 +76,7 @@ function handleData(event) {
 
 function showFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
+  let fahrenheitTemperature = Math.round(celsiusTemperature * 1.8 + 32);
   let temperature = document.querySelector("#temperature");
   let fahrenheit = document.querySelector("#fahrenheit");
   temperature.innerHTML = fahrenheitTemperature;
