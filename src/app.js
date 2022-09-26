@@ -37,6 +37,12 @@ date.innerHTML = `${nameDay} ${month} ${year}`;
 let time = document.querySelector(".time");
 time.innerHTML = `${hours}:${minutes}`;
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ae83a60794fa4d45d88e6b19756a1473";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
@@ -60,7 +66,9 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
+  getForecast(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "ae83a60794fa4d45d88e6b19756a1473";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -88,26 +96,34 @@ function showCelsius(event) {
   celsius.style.color = "#101510";
   fahrenheit.style.color = "#2c3a2b";
 }
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#weather-days");
-  let forecastHTML = "";
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = [
+    "Sunday",
+    "Monday",
     "Tuesday",
-    "Wednesday",
+    "Wednsday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm-9">
+  return days[day];
+}
+function displayForecast(response) {
+  let dailyForecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-days");
+  let forecastHTML = "";
+
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6)
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm-9">
       <div class="row text-left gy-5">
-        <div class="col-8 col-sm-8">${day}</div>
+        <div class="col-8 col-sm-8">${formatDay(forecastDay.dt)}</div>
         <div class="col-4 col-sm">
-          <span id="tuesday">20</span>
+          <span id="tuesday">${Math.round(forecastDay.temp.day)}</span>
           <sup>°</sup>
         </div>
       </div>
@@ -117,7 +133,7 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
