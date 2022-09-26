@@ -30,6 +30,10 @@ h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
+#weather-detail {
+  color: #614f62;
+  font-size: 20px;
+}
 #temperature {
   font-size: 54px;
   color: #d7d3d7;
@@ -42,16 +46,6 @@ h2 {
   text-decoration: none;
   margin-left: 10px;
   vertical-align: top;
-  background: rgba(255, 255, 255, 0.17);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.6px);
-  -webkit-backdrop-filter: blur(10.6px);
-  border-radius: 5px;
-  border: none;
-  padding: 5px 10px;
-  font-size: 22px;
-  text-decoration-color: #d7d3d7;
   max-width: 66px;
 }
 #fahrenheit {

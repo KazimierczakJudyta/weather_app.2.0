@@ -41,23 +41,21 @@ function displayTemperature(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city-name");
-  let cloudElement = document.querySelector("#cloudy");
+
   let weatherInfo = document.querySelector("#weather-info");
   let fellsLike = document.querySelector("#feels");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let pressureElement = document.querySelector("#pressure");
   let iconElement = document.querySelector("#icon");
   celsiusTemperature = Math.round(response.data.main.temp);
   celsius.style.color = "#101510";
   temperatureElement.innerHTML = celsiusTemperature;
   cityElement.innerHTML = response.data.name;
-  cloudElement.innerHTML = response.data.clouds.all;
   weatherInfo.innerHTML = response.data.weather[0].description;
   fellsLike.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
-  pressureElement.innerHTML = response.data.main.pressure;
+
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
@@ -90,6 +88,36 @@ function showCelsius(event) {
   celsius.style.color = "#101510";
   fahrenheit.style.color = "#2c3a2b";
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-days");
+  let forecastHTML = "";
+  let days = [
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm-9">
+      <div class="row text-left gy-5">
+        <div class="col-8 col-sm-8">${day}</div>
+        <div class="col-4 col-sm">
+          <span id="tuesday">20</span>
+          <sup>°</sup>
+        </div>
+      </div>
+    </div>
+  `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
